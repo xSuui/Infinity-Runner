@@ -5,9 +5,12 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private Rigidbody2D rig;
+    public Animator anim;
 
     public float speed;
     public float jumpForce;
+
+    private bool isJumping;
 
     // Start is called before the first frame update
     void Start()
@@ -23,9 +26,20 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) && !isJumping)
         {
             rig.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+            anim.SetBool("Jumping", true);
+            isJumping = true;
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 6)
+        {
+            anim.SetBool("Jumping", false);
+            isJumping = false;
         }
     }
 }
