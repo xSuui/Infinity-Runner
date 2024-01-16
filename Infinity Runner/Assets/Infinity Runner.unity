@@ -210,7 +210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db118fa473fe5ef4d859790b04d7673f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 200
+  speed: 1000
   offset: 5
 --- !u!20 &519420031
 Camera:
