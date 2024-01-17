@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Infinity Runner.unity
     guid: 78df71fcf7660dd4e8f79eba07b4c32c
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: b94276dec0e4f6e44ba6ef9e2cd6e365
   m_configObjects: {}
