@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8206379550319511843}
   m_Layer: 0
   m_Name: Projectile_player
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,7 +95,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -135,3 +135,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+  damage: 2
+  expPrefab: {fileID: 1243060889412770676, guid: 36ee1ae5ea4cac849950ec91fba0c1e2, type: 3}
