@@ -31,17 +31,27 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && !isJumping)
+        if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
         {
-            rig.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-            anim.SetBool("Jumping", true);
-            isJumping = true;
+            OnJump();
         }
 
-        if(Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKeyDown(KeyCode.LeftControl))
         {
-            Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            OnShoot();
         }
+    }
+
+    public void OnShoot()
+    {
+        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+    }
+
+    public void OnJump()
+    {
+        rig.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+        anim.SetBool("Jumping", true);
+        isJumping = true;
     }
 
     public void OnHit(int dmg)
